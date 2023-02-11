@@ -14,12 +14,12 @@ def find_mismatch(text):
     for i, next in enumerate(text):
         if next in "([{":
             # Process opening bracket, write your code here
-            opening_brackets_stack.append( Bracket(next_character, i + 1))
+            opening_brackets_stack.append( Bracket(next, i + 1))
             # pass
 
         if next in ")]}":
             # Process closing bracket, write your code here
-            if not opening_brackets_stack  or  not are_matching(opening_bracket_stack[-1].char, next_character):
+            if not opening_brackets_stack  or  not are_matching(opening_bracket_stack[-1].char, next):
                return i + 1
         opening_brackets_stack.pop()
         
@@ -35,10 +35,10 @@ def main():
     text = input()
     mismatch = find_mismatch(text)
     # Printing answer, write your code here
-    if isinstance(result, int): 
-        print (result)
+    if isinstance(mismatch, int): 
+        print (mismatch)
     else:
-        print (result)
+        print (mismatch)
 
         
 
