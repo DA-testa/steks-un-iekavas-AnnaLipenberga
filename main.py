@@ -25,8 +25,8 @@ def find_mismatch(text):
         
  if not opening_brackets_stack:
     return "Success"
-else:  
-    return opening_brackets_stack[-1].position + 1    
+ 
+ return opening_brackets_stack[-1].position + 1    
             # pass
 
 
