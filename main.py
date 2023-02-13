@@ -40,6 +40,16 @@ def main():
     else:
         print (mismatch)
 
+in = input()
+if in == 'I':
+    result = mismatch(text)
+    print(result)
+else:
+    with open ("test_file.txt", "r") as file:
+        for line in file:
+            write = line.strip()
+            result = mismatch(text)
+            print(result)
         
 
 if __name__ == "__main__":
