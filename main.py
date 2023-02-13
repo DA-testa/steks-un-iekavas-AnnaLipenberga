@@ -15,7 +15,7 @@ def find_mismatch(text):
         if next in "([{":
             # Process opening bracket, write your code here
             opening_brackets_stack.append(Bracket(next, i + 1))
-            pass
+            #pass
 
         if next in ")]}":
             # Process closing bracket, write your code here
@@ -27,7 +27,7 @@ def find_mismatch(text):
             return "Success"
         else:
             return opening_brackets_stack[-1].position + 1    
-            pass
+            #pass
 
 
 
@@ -40,15 +40,16 @@ def main():
     else:
         print (mismatch)
 
-in = input()
-if in == 'I':
-    result = mismatch(text)
+inp = input()
+if inp == 'I':
+    write = input()
+    result = find_mismatch(write)
     print(result)
 else:
     with open ("test_file.txt", "r") as file:
         for line in file:
             write = line.strip()
-            result = mismatch(text)
+            result = find_mismatch(write)
             print(result)
         
 
