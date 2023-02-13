@@ -20,13 +20,12 @@ def find_mismatch(text):
         if next in ")]}":
             # Process closing bracket, write your code here
             if not opening_brackets_stack  or  not are_matching(opening_bracket_stack[-1].char, next):
-               return i + 1
+               return i+1
         opening_brackets_stack.pop()
-        
-        if not opening_brackets_stack:
-            return "Success"
-        else:
-            return opening_brackets_stack[-1].position + 1    
+        if opening_brackets_stack:
+            return opening_brackets_stack[-1].position
+        return "Success"
+                
             #pass
 
 
@@ -40,17 +39,6 @@ def main():
     else:
         print (mismatch)
 
-inp = input()
-if inp == 'I':
-    write = input()
-    result = find_mismatch(write)
-    print(result)
-else:
-    with open ("test_file.txt", "r") as file:
-        for line in file:
-            write = line.strip()
-            result = find_mismatch(write)
-            print(result)
         
 
 if __name__ == "__main__":
