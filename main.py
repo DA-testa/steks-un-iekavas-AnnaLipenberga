@@ -14,19 +14,19 @@ def find_mismatch(text):
     for i, next in enumerate(text):
         if next in "([{":
             # Process opening bracket, write your code here
-            opening_brackets_stack.append(Bracket(next, i + 1))
-            
+             opening_brackets_stack.append(Bracket(next, i + 1))
+            #pass
 
         if next in ")]}":
             # Process closing bracket, write your code here
             if not opening_brackets_stack  or  not are_matching(opening_brackets_stack[-1].char, next):
                return i+1
-        opening_brackets_stack.pop()
-        if opening_brackets_stack:
-            return opening_brackets_stack[-1].position
-        return "Success"
+            opening_brackets_stack.pop()
+    if opening_brackets_stack:
+      return opening_brackets_stack[-1].position
+      return "Success"
                 
-            
+            #pass
 
 
 
@@ -39,6 +39,7 @@ def main():
     else:
         print (mismatch)
 
+        
         
 
 if __name__ == "__main__":
