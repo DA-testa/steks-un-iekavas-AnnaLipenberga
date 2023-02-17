@@ -24,7 +24,7 @@ def find_mismatch(text):
             opening_brackets_stack.pop()
     if opening_brackets_stack:
         return "Success"
-    else
+    else:
         return opening_brackets_stack[-1].position
     
             # Process closing bracket, write your code here
