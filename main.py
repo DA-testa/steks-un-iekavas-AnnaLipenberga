@@ -26,7 +26,13 @@ def find_mismatch(text):
             
 
 def main():
-    text = input()
+    inputType = input()
+    if inputType == "F":
+        filename = input()
+        with open(filename, 'r') as f:
+            text = f.readline().strip()
+    else:
+        text = input()
     mismatch = find_mismatch(text)
     if mismatch == "Success": 
         print(mismatch)
